@@ -78,26 +78,23 @@ public class IOHandle {
             int rowCount = 0;
 
             for(Object[] aBook : bookData){
-                XSSFRow sheetRow = sheet.getRow(rowCount++);
-                //Row row = sheet.createRow(rowCount++);
 
+                Row row = sheet.createRow(rowCount++);
                 int columnCount = 0;
-
                 for(Object field : aBook){
-                    //Cell cell = row.createCell(columnCount++);
-                    //Cell cell = workbook
-                    cell = sheetRow.getCell(columnCount++);
-                    cell.setCellValue((Integer) field);
+                    cell = row.createCell(columnCount++);
+                    cell.setCellValue((int) field);
                 }
             }
 
 
-            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\aphis\\Desktop\\write.xlsx");
+            FileOutputStream outputStream = new FileOutputStream(pathFile);
             workbook.write(outputStream);
             System.out.println("Done");
 
         }catch (Exception e){
             System.out.println("Can not write file");
+            e.printStackTrace();
         }
     }
 
