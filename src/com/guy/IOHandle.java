@@ -1,6 +1,5 @@
 package com.guy;
 
-import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -87,14 +86,15 @@ public class IOHandle {
                 }
             }
 
-
-            FileOutputStream outputStream = new FileOutputStream(pathFile);
+            File file = new File(pathFile);
+            FileOutputStream outputStream = new FileOutputStream(file);
             workbook.write(outputStream);
             System.out.println("Done");
 
+            //File file = new File(pathFile);
+            Desktop.getDesktop().open(file);
         }catch (Exception e){
             System.out.println("Can not write file");
-            e.printStackTrace();
         }
     }
 
