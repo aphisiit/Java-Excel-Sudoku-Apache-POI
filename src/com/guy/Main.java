@@ -43,8 +43,8 @@ public class Main {
                 folderChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 folderChooser.setFileFilter(filter);
                 folderChooser.showSaveDialog(null);
-                IOHandle.writeNewExcel(table,folderChooser.getSelectedFile().getPath());
-                //System.out.println(folderChooser.getSelectedFile());
+                IOHandle.writeNewExcel(table,folderChooser.getSelectedFile().getPath() + ".xlsx");
+                //System.out.println(folderChooser.getSelectedFile().getPath() + ".xlsx");
             }
 
         }catch (NullPointerException e){
