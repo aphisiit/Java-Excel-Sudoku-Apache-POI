@@ -47,10 +47,12 @@ public class Main {
                 //System.out.println(folderChooser.getSelectedFile().getPath() + ".xlsx");
             }
 
-        }catch (NullPointerException e){
+        }catch (NullPointerException e) {
             e.printStackTrace();
 //            JOptionPane.showMessageDialog(null,"You not choose file.");
-            JOptionPane.showMessageDialog(null,"Program exist");
+            JOptionPane.showMessageDialog(null, "Program exist");
+        }catch (Exception e){
+
         }
     }
 }
